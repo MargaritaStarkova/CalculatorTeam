@@ -11,20 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var recycler: RecyclerView
     private lateinit var adapter: HabitAdapter
-    var habitList: List<Habit> = mutableListOf(
-        Habit(
-            "smoking",
-            "Хочу меньше курить!",
-            "Всего 12 сигарет за последний месяц",
-            "Just do it",
-            "Последний раз ты продержался 15 часов!"),
-        Habit(
-            "empty",
-            "Хочу меньше xxxxxxxxxx!",
-            "Всего х раз сорвался за последний месяц",
-            "Just do it",
-            "Последний раз ты продержался х часов!")
-    )
+    var habitList: MutableList<Habit> = mutableListOf()
 
 
 
@@ -36,24 +23,24 @@ class MainActivity : AppCompatActivity() {
         btnJustDoIt.setOnClickListener {
             btnJustDoIt.text = "3дня 11:34" }*/
 
-        /*habitList.plus(Habit(
+        habitList.add(Habit(
                 "smoking",
                 "Хочу меньше курить!",
                 "Всего 12 сигарет за последний месяц",
                 "Just do it",
                 "Последний раз ты продержался 15 часов!"))
-        habitList.plus(Habit(
+        habitList.add(Habit(
             "empty",
-            "Хочу меньше заполнить!",
+            "Хочу меньше xxxxxxxx!",
             "Всего х раз сорвался за последний месяц",
             "Just do it",
             "Последний раз ты продержался х часов!"))
-        habitList.plus(Habit(
+        habitList.add(Habit(
             "empty",
-            "Хочу меньше заполнить!",
+            "Хочу меньше yyyyyyyy!",
             "Всего х раз сорвался за последний месяц",
             "Just do it",
-            "Последний раз ты продержался х часов!"))*/
+            "Последний раз ты продержался х часов!"))
 
         setRecycler(habitList)
     }
