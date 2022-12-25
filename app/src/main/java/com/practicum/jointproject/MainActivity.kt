@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         var res1 = 0.0
         var res2: Double
         var operator = ""
+        var test = "asd,dkdjdkdk"
 
         zero.setOnClickListener {top_ressum.append("0")}
         one.setOnClickListener {top_ressum.append("1")}
@@ -83,9 +84,11 @@ class MainActivity : AppCompatActivity() {
             operator = "/"
         }
         percent.setOnClickListener {
+
             res1 = top_ressum.text.toString().toDouble()
             top_ressum.text = ""
             operator = "%"
+
         }
         result.setOnClickListener {
             res2 = top_ressum.text.toString().toDouble()
