@@ -8,7 +8,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 
-
 class MainActivity : AppCompatActivity() {
 
 
@@ -41,25 +40,26 @@ class MainActivity : AppCompatActivity() {
         var res1 = 0.0
         var res2: Double
         var operator = ""
+        var test = "test"
 
-        zero.setOnClickListener {top_ressum.append("0")}
-        one.setOnClickListener {top_ressum.append("1")}
-        two.setOnClickListener {top_ressum.append("2")}
-        three.setOnClickListener {top_ressum.append("3")}
-        four.setOnClickListener {top_ressum.append("4")}
-        five.setOnClickListener {top_ressum.append("5")}
-        six.setOnClickListener {top_ressum.append("6")}
-        seven.setOnClickListener {top_ressum.append("7")}
-        eight.setOnClickListener {top_ressum.append("8")}
-        nine.setOnClickListener {top_ressum.append("9")}
-        dota.setOnClickListener {top_ressum.append(".")}
+        zero.setOnClickListener { top_ressum.append("0") }
+        one.setOnClickListener { top_ressum.append("1") }
+        two.setOnClickListener { top_ressum.append("2") }
+        three.setOnClickListener { top_ressum.append("3") }
+        four.setOnClickListener { top_ressum.append("4") }
+        five.setOnClickListener { top_ressum.append("5") }
+        six.setOnClickListener { top_ressum.append("6") }
+        seven.setOnClickListener { top_ressum.append("7") }
+        eight.setOnClickListener { top_ressum.append("8") }
+        nine.setOnClickListener { top_ressum.append("9") }
+        dota.setOnClickListener { top_ressum.append(".") }
         delete.setOnClickListener {
             top_ressum.text = ""
             result_panel.text = ""
         }
         backspace.setOnClickListener {
             val str = top_ressum.text.toString()
-            if(str.isNotEmpty()) top_ressum.text = str.substring(0, str.length - 1)
+            if (str.isNotEmpty()) top_ressum.text = str.substring(0, str.length - 1)
         }
 
         plus.setOnClickListener {
