@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val result_panel = findViewById<TextView>(R.id.result_panel)
 
         val zero = findViewById<Button>(R.id.zero)
-        val one = findViewById<Button>(R.id.one)
+        //val one = findViewById<Button>(R.id.one)
         val two = findViewById<Button>(R.id.two)
         val three = findViewById<Button>(R.id.three)
         val four = findViewById<Button>(R.id.four)
@@ -40,10 +40,12 @@ class MainActivity : AppCompatActivity() {
         var res1 = 0.0
         var res2: Double
         var operator = ""
-        var test = "test"
+
+
+
 
         zero.setOnClickListener { top_ressum.append("0") }
-        one.setOnClickListener { top_ressum.append("1") }
+        //one.setOnClickListener { top_ressum.append("1") }
         two.setOnClickListener { top_ressum.append("2") }
         three.setOnClickListener { top_ressum.append("3") }
         four.setOnClickListener { top_ressum.append("4") }
