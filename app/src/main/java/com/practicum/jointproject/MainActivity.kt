@@ -1,109 +1,103 @@
 package com.practicum.jointproject
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-
+import com.practicum.jointproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private var symbol = ""
+    private var firstNum = 0.0
+    private var secondNum = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val top_ressum = findViewById<TextView>(R.id.top_ressum)
-        val result_panel = findViewById<TextView>(R.id.result_panel)
+        binding.zero.setOnClickListener { addNumber(binding.zero) }
+        binding.one.setOnClickListener { addNumber(binding.one) }
+        binding.two.setOnClickListener { addNumber(binding.two) }
+        binding.three.setOnClickListener { addNumber(binding.three) }
+        binding.four.setOnClickListener { addNumber(binding.four) }
+        binding.five.setOnClickListener { addNumber(binding.five) }
+        binding.six.setOnClickListener { addNumber(binding.six) }
+        binding.seven.setOnClickListener { addNumber(binding.seven) }
+        binding.eight.setOnClickListener { addNumber(binding.eight) }
+        binding.nine.setOnClickListener { addNumber(binding.nine) }
+        binding.point.setOnClickListener { addNumber(binding.point) }
 
-        val zero = findViewById<Button>(R.id.zero)
-        //val one = findViewById<Button>(R.id.one)
-        val two = findViewById<Button>(R.id.two)
-        val three = findViewById<Button>(R.id.three)
-        val four = findViewById<Button>(R.id.four)
-        val five = findViewById<Button>(R.id.five)
-        val six = findViewById<Button>(R.id.six)
-        val seven = findViewById<Button>(R.id.seven)
-        val eight = findViewById<Button>(R.id.eight)
-        val nine = findViewById<Button>(R.id.nine)
-        val dota = findViewById<Button>(R.id.dota)
-        val plus = findViewById<Button>(R.id.plus)
-        val minus = findViewById<Button>(R.id.minus)
-        val mul = findViewById<Button>(R.id.mul)
-        val div = findViewById<Button>(R.id.div)
-        val percent = findViewById<Button>(R.id.percent)
-        val delete = findViewById<Button>(R.id.delete)
-        val backspace = findViewById<ImageButton>(R.id.backspace)
-        val result = findViewById<Button>(R.id.result)
-        var res1 = 0.0
-        var res2: Double
-        var operator = ""
+        binding.delete.setOnClickListener { clearing() }
+        binding.backspace.setOnClickListener {binding.tvInput.text = binding.tvInput.text.dropLast(1) }
 
+        binding.div.setOnClickListener { addSymbol(binding.div) }
+        binding.mul.setOnClickListener { addSymbol(binding.mul) }
+        binding.plus.setOnClickListener { addSymbol(binding.plus) }
+        binding.minus.setOnClickListener { addSymbol(binding.minus) }
+        binding.percent.setOnClickListener { addSymbol(binding.percent) }
 
-
-
-        zero.setOnClickListener { top_ressum.append("0") }
-        //one.setOnClickListener { top_ressum.append("1") }
-        two.setOnClickListener { top_ressum.append("2") }
-        three.setOnClickListener { top_ressum.append("3") }
-        four.setOnClickListener { top_ressum.append("4") }
-        five.setOnClickListener { top_ressum.append("5") }
-        six.setOnClickListener { top_ressum.append("6") }
-        seven.setOnClickListener { top_ressum.append("7") }
-        eight.setOnClickListener { top_ressum.append("8") }
-        nine.setOnClickListener { top_ressum.append("9") }
-        dota.setOnClickListener { top_ressum.append(".") }
-        delete.setOnClickListener {
-            top_ressum.text = ""
-            result_panel.text = ""
-        }
-        backspace.setOnClickListener {
-            val str = top_ressum.text.toString()
-            if (str.isNotEmpty()) top_ressum.text = str.substring(0, str.length - 1)
-        }
-
-        plus.setOnClickListener {
-            res1 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            operator = "+"
-        }
-        minus.setOnClickListener {
-            res1 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            operator = "-"
-        }
-        mul.setOnClickListener {
-            res1 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            operator = "*"
-        }
-        div.setOnClickListener {
-            res1 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            operator = "/"
-        }
-        percent.setOnClickListener {
-
-            res1 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            operator = "%"
-
-        }
-        result.setOnClickListener {
-            res2 = top_ressum.text.toString().toDouble()
-            top_ressum.text = ""
-            when (operator) {
-                "+" -> result_panel.text = "${res1 + res2}"
-                "-" -> result_panel.text = "${res1 - res2}"
-                "*" -> result_panel.text = "${res1 * res2}"
-                "/" -> result_panel.text = "${res1 / res2}"
-                "%" -> result_panel.text = "${res1 / res2 * 100}"
+        binding.equal.setOnClickListener { //расчет первого выражения
+            val list = binding.tvInput.text.split(Regex("[-+*/%]"))
+            if (list.size == 2 && isDouble(list)) {
+                switchingSymbol()
+                outputting()
             }
-
+            else if (list.size == 2 && binding.tvResult.text.isNotEmpty()) { //работа с результатом
+                secondNum = list[1].toDouble()
+                switchingSymbol()
+                outputting()
+            } else clearing()
         }
-
     }
 
+    private fun addSymbol(btn: Button) {
+        symbol = btn.text.toString()
+        binding.tvInput.append(symbol)
+    }
+
+    private fun addNumber(btn: Button) {
+        when (binding.tvInput.text.length) {
+            in 0..14 -> binding.tvInput.append(btn.text)
+            else -> binding.tvInput.text = getString(R.string.overload)
+        }
+    }
+
+    private fun clearing() {
+        firstNum = 0.0
+        secondNum = 0.0
+        binding.tvInput.text = ""
+        binding.tvResult.text = ""
+        binding.tvResult.textSize = 68F
+    }
+
+    private fun isDouble(list: List<String>): Boolean {
+        return try {
+            firstNum = list[0].toDouble()
+            secondNum = list[1].toDouble()
+            true
+        } catch (e: NumberFormatException) { false }
+    }
+
+    private fun switchingSymbol() {
+        when (symbol) {
+            "+" -> { firstNum = firstNum.plus(secondNum) }
+            "-" -> { firstNum = firstNum.minus(secondNum) }
+            "*" -> { firstNum = firstNum.times(secondNum) }
+            "/" -> { firstNum = firstNum.div(secondNum) }
+            "%" -> { firstNum = firstNum.times(secondNum).div(100) }
+        }
+        binding.tvInput.text = ""
+    }
+
+    private fun outputting() {
+        if (firstNum % 1 == 0.0)
+            binding.tvResult.text = firstNum.toInt().toString()
+        else
+            binding.tvResult.text = firstNum.toString()
+        if (binding.tvResult.text.length > 11)
+            binding.tvResult.textSize = 40f
+    }
 }
+
