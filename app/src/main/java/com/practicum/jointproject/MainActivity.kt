@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.point.setOnClickListener { addNumber(binding.point) }
 
         binding.delete.setOnClickListener { clearing() }
-        binding.backspace.setOnClickListener {binding.tvInput.text = binding.tvInput.text.dropLast(1) }
+        binding.backspace.setOnClickListener { binding.tvInput.text = binding.tvInput.text.dropLast(1) }
 
         binding.div.setOnClickListener { addSymbol(binding.div) }
         binding.mul.setOnClickListener { addSymbol(binding.mul) }
