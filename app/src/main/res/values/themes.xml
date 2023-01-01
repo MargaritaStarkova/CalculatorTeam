@@ -12,6 +12,5 @@
         <item name="android:itemBackground">#11D5BA</item>
         <item name="popupMenuStyle">@style/Widget.MaterialComponents.PopupMenu</item>
         <item name="actionOverflowMenuStyle">@style/Widget.MaterialComponents.PopupMenu.Overflow</item>
-
     </style>
 </resources>
