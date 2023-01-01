@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addNumber(btn: Button) {
         when (binding.tvInput.text.length) {
-            in 0..14 -> binding.tvInput.append(btn.text)
+            in 0..17 -> binding.tvInput.append(btn.text)
             else -> binding.tvInput.text = getString(R.string.overload)
         }
     }
@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         secondNum = 0.0
         binding.tvInput.text = ""
         binding.tvResult.text = ""
-        binding.tvResult.textSize = 68F
     }
 
     private fun isDouble(list: List<String>): Boolean {
@@ -95,9 +94,7 @@ class MainActivity : AppCompatActivity() {
         if (firstNum % 1 == 0.0)
             binding.tvResult.text = firstNum.toInt().toString()
         else
-            binding.tvResult.text = firstNum.toString()
-        if (binding.tvResult.text.length > 11)
-            binding.tvResult.textSize = 40f
+            binding.tvResult.text = firstNum.toFloat().toString()
     }
 }
 
