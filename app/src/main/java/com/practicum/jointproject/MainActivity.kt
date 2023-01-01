@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addNumber(btn: Button) {
         when (binding.tvInput.text.length) {
-            in 0..17 -> binding.tvInput.append(btn.text)
+            in 0..15 -> binding.tvInput.append(btn.text)
             else -> binding.tvInput.text = getString(R.string.overload)
         }
     }
