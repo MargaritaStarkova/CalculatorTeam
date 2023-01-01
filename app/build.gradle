@@ -4,6 +4,11 @@ plugins {
 }
 
 android {
+
+    buildFeatures{
+        viewBinding = true
+    }
+
     namespace 'com.practicum.jointproject'
     compileSdk 32
 
