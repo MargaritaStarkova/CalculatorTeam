@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
         binding.minus.setOnClickListener { addSymbol(binding.minus) }
         binding.percent.setOnClickListener { addSymbol(binding.percent) }
 
-        binding.equal.setOnClickListener { //расчет первого выражения
+        binding.equal.setOnClickListener {
             val list = binding.tvInput.text.split(Regex("[-+*/%]"))
-            if (list.size == 2 && isDouble(list)) {
+            if (list.size == 2 && isDouble(list)) { //расчет первого выражения
                 switchingSymbol()
                 outputting()
             }
@@ -48,7 +48,11 @@ class MainActivity : AppCompatActivity() {
                 secondNum = list[1].toDouble()
                 switchingSymbol()
                 outputting()
-            } else clearing()
+            }
+            else if (list.size == 3 && isNegative(list)) { //расчет первого выражения с отрицательным числом
+                switchingSymbol()
+                outputting()
+            } else clearing() //обработка неправильного ввода
         }
     }
 
@@ -75,6 +79,16 @@ class MainActivity : AppCompatActivity() {
         return try {
             firstNum = list[0].toDouble()
             secondNum = list[1].toDouble()
+            true
+        } catch (e: NumberFormatException) { false }
+    }
+
+    private fun isNegative(list: List<String>): Boolean {
+        return try {
+            if (binding.tvInput.text.take(1).toString() == "-") {
+                firstNum = -1 * list[1].toDouble()
+                secondNum = list[2].toDouble()
+            }
             true
         } catch (e: NumberFormatException) { false }
     }
