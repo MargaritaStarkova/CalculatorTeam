@@ -49,10 +49,13 @@ class MainActivity : AppCompatActivity() {
                 switchingSymbol()
                 outputting()
             }
-            else if (list.size == 3 && isNegative(list)) { //расчет первого выражения с отрицательным числом
+            else if (list.size == 3 && list[1].isNotEmpty() && isNegative(list)) { //расчет первого выражения с отрицательным числом
                 switchingSymbol()
                 outputting()
-            } else clearing() //обработка неправильного ввода
+            }
+            else if (binding.tvResult.text.isNotEmpty())
+                binding.tvInput.text = ""
+            else clearing() //обработка неправильного ввода
         }
     }
 
