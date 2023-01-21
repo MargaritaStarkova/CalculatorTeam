@@ -3,6 +3,7 @@ package com.practicum.jointproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatDelegate
 import com.practicum.jointproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
             }
             else if (binding.tvResult.text.isNotEmpty())
                 binding.tvInput.text = ""
+            else if (list.size == 1 && list[0] == "0") {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) }
+            else if (list.size == 1 && list[0] == "1") {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) }
             else clearing() //обработка неправильного ввода
         }
     }
