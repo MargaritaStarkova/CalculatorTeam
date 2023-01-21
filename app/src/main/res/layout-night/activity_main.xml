@@ -7,7 +7,7 @@
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/container">
+    android:background="@color/appColor">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -55,6 +55,11 @@
         android:id="@+id/horizontal9"
         app:layout_constraintGuide_percent="0.09" />
 
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal52"
+        app:layout_constraintEnd_toEndOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal36" />
     <Button
         android:id="@+id/one"
         style="@style/button"
@@ -63,6 +68,13 @@
         app:layout_constraintEnd_toEndOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal36" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal52"
+        app:layout_constraintEnd_toEndOf="@id/vertical50"
+        app:layout_constraintStart_toStartOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal36" />
     <Button
         android:id="@+id/two"
         style="@style/button"
@@ -72,6 +84,13 @@
         app:layout_constraintStart_toStartOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal36" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal52"
+        app:layout_constraintEnd_toEndOf="@id/vertical75"
+        app:layout_constraintStart_toStartOf="@id/vertical50"
+        app:layout_constraintTop_toTopOf="@id/horizontal36" />
     <Button
         android:id="@+id/three"
         style="@style/button"
@@ -81,6 +100,12 @@
         app:layout_constraintStart_toStartOf="@id/vertical50"
         app:layout_constraintTop_toTopOf="@id/horizontal36" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal68"
+        app:layout_constraintEnd_toEndOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal52" />
     <Button
         android:id="@+id/four"
         style="@style/button"
@@ -89,6 +114,13 @@
         app:layout_constraintEnd_toEndOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal52" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal68"
+        app:layout_constraintEnd_toEndOf="@id/vertical50"
+        app:layout_constraintStart_toStartOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal52" />
     <Button
         android:id="@+id/five"
         style="@style/button"
@@ -98,6 +130,13 @@
         app:layout_constraintStart_toStartOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal52" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal68"
+        app:layout_constraintEnd_toEndOf="@id/vertical75"
+        app:layout_constraintStart_toStartOf="@id/vertical50"
+        app:layout_constraintTop_toTopOf="@id/horizontal52" />
     <Button
         android:id="@+id/six"
         style="@style/button"
@@ -107,6 +146,12 @@
         app:layout_constraintStart_toStartOf="@id/vertical50"
         app:layout_constraintTop_toTopOf="@id/horizontal52" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal84"
+        app:layout_constraintEnd_toEndOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal68" />
     <Button
         android:id="@+id/seven"
         style="@style/button"
@@ -115,6 +160,13 @@
         app:layout_constraintEnd_toEndOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal68" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal84"
+        app:layout_constraintEnd_toEndOf="@id/vertical50"
+        app:layout_constraintStart_toStartOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal68" />
     <Button
         android:id="@+id/eight"
         style="@style/button"
@@ -124,6 +176,13 @@
         app:layout_constraintStart_toStartOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal68" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal84"
+        app:layout_constraintEnd_toEndOf="@id/vertical75"
+        app:layout_constraintStart_toStartOf="@id/vertical50"
+        app:layout_constraintTop_toTopOf="@id/horizontal68" />
     <Button
         android:id="@+id/nine"
         style="@style/button"
@@ -133,6 +192,12 @@
         app:layout_constraintStart_toStartOf="@id/vertical50"
         app:layout_constraintTop_toTopOf="@id/horizontal68" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintEnd_toEndOf="@id/vertical50"
+        app:layout_constraintStart_toStartOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal84" />
     <Button
         android:id="@+id/zero"
         style="@style/button"
@@ -141,6 +206,11 @@
         app:layout_constraintStart_toStartOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal84" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintEnd_toEndOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal84" />
     <Button
         android:id="@+id/point"
         style="@style/button"
@@ -148,6 +218,12 @@
         app:layout_constraintEnd_toEndOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal84" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintEnd_toEndOf="@id/vertical75"
+        app:layout_constraintStart_toStartOf="@id/vertical50"
+        app:layout_constraintTop_toTopOf="@id/horizontal84" />
     <Button
         android:id="@+id/percent"
         style="@style/button"
@@ -156,6 +232,12 @@
         app:layout_constraintStart_toStartOf="@id/vertical50"
         app:layout_constraintTop_toTopOf="@id/horizontal84" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal36"
+        app:layout_constraintEnd_toEndOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal20" />
     <Button
         android:id="@+id/plus"
         style="@style/button"
@@ -164,6 +246,13 @@
         app:layout_constraintEnd_toEndOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal20" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal36"
+        app:layout_constraintEnd_toEndOf="@id/vertical50"
+        app:layout_constraintStart_toStartOf="@id/vertical25"
+        app:layout_constraintTop_toTopOf="@id/horizontal20" />
     <Button
         android:id="@+id/minus"
         style="@style/button"
@@ -173,6 +262,13 @@
         app:layout_constraintStart_toStartOf="@id/vertical25"
         app:layout_constraintTop_toTopOf="@id/horizontal20" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal36"
+        app:layout_constraintEnd_toEndOf="@id/vertical75"
+        app:layout_constraintStart_toStartOf="@id/vertical50"
+        app:layout_constraintTop_toTopOf="@id/horizontal20" />
     <Button
         android:id="@+id/mul"
         style="@style/button"
@@ -182,6 +278,12 @@
         app:layout_constraintStart_toStartOf="@id/vertical50"
         app:layout_constraintTop_toTopOf="@id/horizontal20" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal36"
+        app:layout_constraintStart_toStartOf="@id/vertical75"
+        app:layout_constraintTop_toTopOf="@id/horizontal20" />
     <Button
         android:id="@+id/div"
         style="@style/button"
@@ -190,23 +292,38 @@
         app:layout_constraintStart_toStartOf="@id/vertical75"
         app:layout_constraintTop_toTopOf="@id/horizontal20" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintStart_toStartOf="@id/vertical75"
+        app:layout_constraintTop_toTopOf="@id/horizontal68" />
     <Button
         android:id="@+id/equal"
         style="@style/button"
-        android:background="@drawable/custom_result_button"
         android:text="@string/equals"
         app:layout_constraintStart_toStartOf="@id/vertical75"
         app:layout_constraintTop_toTopOf="@id/horizontal68" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal52"
+        app:layout_constraintStart_toStartOf="@id/vertical75"
+        app:layout_constraintTop_toTopOf="@id/horizontal36" />
     <Button
         android:id="@+id/delete"
         style="@style/button"
-        android:background="@drawable/custom_cancel_button"
         android:text="@string/clearing"
         app:layout_constraintBottom_toBottomOf="@id/horizontal52"
         app:layout_constraintStart_toStartOf="@id/vertical75"
         app:layout_constraintTop_toTopOf="@id/horizontal36" />
 
+
+    <ImageView
+        style="@style/image"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal68"
+        app:layout_constraintStart_toStartOf="@id/vertical75"
+        app:layout_constraintTop_toTopOf="@id/horizontal52" />
     <ImageButton
         android:id="@+id/backspace"
         style="@style/button"
@@ -216,13 +333,21 @@
         app:layout_constraintStart_toStartOf="@id/vertical75"
         app:layout_constraintTop_toTopOf="@id/horizontal52" />
 
+
+    <ImageView
+        style="@style/image"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/tv_result"
         style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="3dp"
-        android:background="@drawable/custom_label"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_result_button"
         android:gravity="start|bottom"
         android:paddingStart="10dp"
         android:paddingEnd="20dp"
