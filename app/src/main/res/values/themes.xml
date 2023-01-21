@@ -10,6 +10,6 @@
     </style>
     <style name="popup" parent="@android:style/Widget.PopupMenu">
         <item name="android:textColor">@color/black</item>
-        <item name="android:itemBackground">#11D5BA</item>
+        <item name="android:itemBackground">@color/colorAccent</item>
     </style>
 </resources>
