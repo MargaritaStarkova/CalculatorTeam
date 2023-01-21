@@ -109,9 +109,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun outputting() {
         if (firstNum % 1 == 0.0)
-            binding.tvResult.text = firstNum.toInt().toString()
+            binding.tvResult.text = "${firstNum.toInt()}"
         else
-            binding.tvResult.text = firstNum.toFloat().toString()
+            binding.tvResult.text = "${firstNum.toFloat()}"
     }
 }
 
