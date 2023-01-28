@@ -1,8 +1,8 @@
 package com.practicum.jointproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.practicum.jointproject.databinding.ActivityMainBinding
 
@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private var symbol = ""
     private var firstNum = 0.0
     private var secondNum = 0.0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.point.setOnClickListener { addNumber(binding.point) }
 
         binding.delete.setOnClickListener { clearing() }
-        binding.backspace.setOnClickListener { binding.tvInput.text = binding.tvInput.text.dropLast(1) }
+        binding.backspace.setOnClickListener {
+            binding.tvInput.text = binding.tvInput.text.dropLast(1)
+        }
 
         binding.div.setOnClickListener { addSymbol(binding.div) }
         binding.mul.setOnClickListener { addSymbol(binding.mul) }
@@ -41,26 +44,29 @@ class MainActivity : AppCompatActivity() {
 
         binding.equal.setOnClickListener {
             val list = binding.tvInput.text.split(Regex("[-+*/%]"))
-            if (list.size == 2 && isDouble(list)) { //расчет первого выражения
-                switchingSymbol()
-                outputting()
+            when {
+                (list.size == 2 && isDouble(list)) or (list.size == 3 && list[1].isNotEmpty() && isNegative(
+                    list
+                )) -> { //расчет первого выражения ( c положительным и отрицательным числом)
+                    switchingSymbol()
+                    outputting()
+                }
+                list.size == 2 && binding.tvResult.text.isNotEmpty() -> { //работа с результатом
+                    secondNum = list[1].toDouble()
+                    switchingSymbol()
+                    outputting()
+                }
+                binding.tvResult.text.isNotEmpty() -> {
+                    binding.tvInput.text = ""
+                }
+                list.size == 1 && list[0] == "0" -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+                list.size == 1 && list[0] == "1" -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+                else -> clearing() //обработка неправильного ввода
             }
-            else if (list.size == 2 && binding.tvResult.text.isNotEmpty()) { //работа с результатом
-                secondNum = list[1].toDouble()
-                switchingSymbol()
-                outputting()
-            }
-            else if (list.size == 3 && list[1].isNotEmpty() && isNegative(list)) { //расчет первого выражения с отрицательным числом
-                switchingSymbol()
-                outputting()
-            }
-            else if (binding.tvResult.text.isNotEmpty())
-                binding.tvInput.text = ""
-            else if (list.size == 1 && list[0] == "0") {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) }
-            else if (list.size == 1 && list[0] == "1") {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) }
-            else clearing() //обработка неправильного ввода
         }
     }
 
@@ -88,7 +94,9 @@ class MainActivity : AppCompatActivity() {
             firstNum = list[0].toDouble()
             secondNum = list[1].toDouble()
             true
-        } catch (e: NumberFormatException) { false }
+        } catch (e: NumberFormatException) {
+            false
+        }
     }
 
     private fun isNegative(list: List<String>): Boolean {
@@ -98,25 +106,35 @@ class MainActivity : AppCompatActivity() {
                 secondNum = list[2].toDouble()
             }
             true
-        } catch (e: NumberFormatException) { false }
+        } catch (e: NumberFormatException) {
+            false
+        }
     }
 
     private fun switchingSymbol() {
         when (symbol) {
-            "+" -> { firstNum = firstNum.plus(secondNum) }
-            "-" -> { firstNum = firstNum.minus(secondNum) }
-            "*" -> { firstNum = firstNum.times(secondNum) }
-            "/" -> { firstNum = firstNum.div(secondNum) }
-            "%" -> { firstNum = firstNum.times(secondNum).div(100) }
+            "+" -> {
+                firstNum = firstNum.plus(secondNum)
+            }
+            "-" -> {
+                firstNum = firstNum.minus(secondNum)
+            }
+            "*" -> {
+                firstNum = firstNum.times(secondNum)
+            }
+            "/" -> {
+                firstNum = firstNum.div(secondNum)
+            }
+            "%" -> {
+                firstNum = firstNum.times(secondNum).div(100)
+            }
         }
         binding.tvInput.text = ""
     }
 
     private fun outputting() {
-        if (firstNum % 1 == 0.0)
-            binding.tvResult.text = "${firstNum.toInt()}"
-        else
-            binding.tvResult.text = "${firstNum.toFloat()}"
+        if (firstNum % 1 == 0.0) binding.tvResult.text = "${firstNum.toInt()}"
+        else binding.tvResult.text = "${firstNum.toFloat()}"
     }
 }
 
