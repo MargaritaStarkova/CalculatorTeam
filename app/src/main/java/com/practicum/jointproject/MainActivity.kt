@@ -39,10 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.delete.setOnClickListener {
             scaleButton(binding.delete)
-            clearing() }
+            clearing()
+        }
         binding.backspace.setOnClickListener {
             scaleButton(binding.backspace)
-            binding.backspace.startAnimation(AnimationUtils.loadAnimation(this,R.anim.scale))
+            binding.backspace.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale))
             binding.tvInput.text = binding.tvInput.text.dropLast(1)
         }
 
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.equal.setOnClickListener {
             scaleButton(binding.equal)
-            binding.equal.startAnimation(AnimationUtils.loadAnimation(this,R.anim.scale))
+            binding.equal.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale))
             val list = binding.tvInput.text.split(Regex("[-+*/%]"))
             when {
                 (list.size == 2 && isDouble(list)) or (list.size == 3 && list[1].isNotEmpty() && isNegative(
@@ -127,11 +128,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun switchingSymbol() {
         when (symbol) {
-            "+" -> { firstNum = firstNum.plus(secondNum) }
-            "-" -> { firstNum = firstNum.minus(secondNum) }
-            "*" -> { firstNum = firstNum.times(secondNum) }
-            "/" -> { firstNum = firstNum.div(secondNum) }
-            "%" -> { firstNum = firstNum.times(secondNum).div(100) }
+            "+" -> {
+                firstNum = firstNum.plus(secondNum)
+            }
+            "-" -> {
+                firstNum = firstNum.minus(secondNum)
+            }
+            "*" -> {
+                firstNum = firstNum.times(secondNum)
+            }
+            "/" -> {
+                firstNum = firstNum.div(secondNum)
+            }
+            "%" -> {
+                firstNum = firstNum.times(secondNum).div(100)
+            }
         }
         binding.tvInput.text = ""
     }
@@ -146,7 +157,7 @@ class MainActivity : AppCompatActivity() {
             btn.setBackgroundResource(R.drawable.btn_transition)
             anim = btn.background as TransitionDrawable
             anim.startTransition(1000)
-            btn.startAnimation(AnimationUtils.loadAnimation(this,R.anim.scale))
+            btn.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale))
         }
     }
 }
