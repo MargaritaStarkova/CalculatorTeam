@@ -1,23 +1,12 @@
 package com.practicum.jointproject
 
-import android.content.res.Configuration
-import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
-import android.view.animation.AnimationUtils
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
-import androidx.core.view.get
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
 import com.practicum.jointproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
