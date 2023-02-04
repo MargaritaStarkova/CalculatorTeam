@@ -20,4 +20,5 @@
     <string name="equals">=</string>
     <string name="clearing">C</string>
     <string name="theme">day</string>
+    <string name="change_theme">Change</string>
 </resources>
