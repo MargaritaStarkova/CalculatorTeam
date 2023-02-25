@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="neomorph_btn" format="reference"/>
+    <attr name="neomorph_frame" format="reference"/>
+    <attr name="neomorph_background" format="reference"/>
+    <attr name="neomorph_background_text" format="reference"/>
+    <attr name="neomorph_color_text" format="reference"/>
+
+    <attr name="base_btn" format="reference"/>
+</resources>
