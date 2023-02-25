@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.view.View
+import android.view.View.INVISIBLE
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.FrameLayout
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         menu = Dialog(this)
 
-        binding.menu.setOnClickListener { showDialogMenu() }
+        binding.menu.setOnClickListener { showDialogMenu(binding.menu) }
         binding.zero.setOnClickListener { addNumber(binding.zero) }
         binding.one.setOnClickListener { addNumber(binding.one) }
         binding.two.setOnClickListener { addNumber(binding.two) }
@@ -88,21 +89,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDialogMenu() {
+    private fun showDialogMenu(v: View) {
         menu.setContentView(R.layout.menu_calculators)
         val oleg: FrameLayout = menu.findViewById(R.id.oleg)
         val rita: FrameLayout = menu.findViewById(R.id.rita)
         val petr: FrameLayout = menu.findViewById(R.id.petr)
         oleg.setOnClickListener {
             menu.dismiss()
+            v.visibility = INVISIBLE
             Toast.makeText(this, "OlegActivity", Toast.LENGTH_LONG).show()
         }
         rita.setOnClickListener {
             menu.dismiss()
+            v.visibility = INVISIBLE
             Toast.makeText(this, "RitaActivity", Toast.LENGTH_LONG).show()
         }
         petr.setOnClickListener {
             menu.dismiss()
+            v.visibility = INVISIBLE
             Toast.makeText(this, "PetrActivity", Toast.LENGTH_LONG).show()
         }
         menu.show()
