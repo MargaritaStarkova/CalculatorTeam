@@ -21,4 +21,6 @@
     <string name="clearing">C</string>
     <string name="theme">day</string>
     <string name="change_theme">Change</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
