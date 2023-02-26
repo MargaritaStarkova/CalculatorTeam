@@ -2,7 +2,7 @@
 
     <style name="Theme.MainActivity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/appColor</item>
-        <item name="android:statusBarColor">@color/statusBar</item>
+        <item name="android:statusBarColor">@color/appColorCenter</item>
         <item name="windowNoTitle">true</item>
         <!-- Customize neomorph theme here. -->
         <item name="neomorph_frame">@drawable/neomorph_day_image</item>

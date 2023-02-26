@@ -7,16 +7,16 @@
             android:shape="rectangle">
             <corners android:radius="16dp" />
             <gradient
-                android:centerX="45%"
-                android:centerY="45%"
+                android:centerX="85%"
+                android:centerY="85%"
                 android:angle="315"
                 android:endColor="@color/white"
-                android:centerColor="@color/colorAccent"
-                android:startColor="@color/colorAccent"
+                android:centerColor="@color/appColorCenter"
+                android:startColor="@color/appColor"
                 android:type="linear" />
             <stroke
-                android:color="@color/colorAccent"
-                android:width="3dp" />
+                android:color="@color/appColor"
+                android:width="2dp" />
         </shape>
     </item>
 
