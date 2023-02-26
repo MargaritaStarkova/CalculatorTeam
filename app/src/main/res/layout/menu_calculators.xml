@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="240dp"
-    android:layout_height="400dp"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginStart="20dp"
-    android:layout_marginTop="20dp">
+    android:background="?attr/neomorph_frame">
 
     <FrameLayout
         android:id="@+id/neomorph"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -17,10 +18,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="80dp"
             android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:textColor="@color/black"
+            android:textColor="?attr/neomorph_color_text"
             android:text="@string/neomorphism"/>
     </FrameLayout>
 
@@ -28,7 +28,7 @@
         android:id="@+id/oleg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_margin="5dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -36,10 +36,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="80dp"
             android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:textColor="@color/black"
+            android:textColor="?attr/neomorph_color_text"
             android:text="Oleg's calculator"/>
     </FrameLayout>
 
@@ -47,7 +46,7 @@
         android:id="@+id/rita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_margin="5dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -55,10 +54,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="80dp"
             android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:textColor="@color/black"
+            android:textColor="?attr/neomorph_color_text"
             android:text="Rita's calculator"/>
     </FrameLayout>
 
@@ -66,7 +64,7 @@
         android:id="@+id/petr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_margin="5dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -74,12 +72,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="80dp"
             android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:textColor="@color/black"
+            android:textColor="?attr/neomorph_color_text"
             android:text="Petr's calculator"/>
     </FrameLayout>
-
-
 </LinearLayout>

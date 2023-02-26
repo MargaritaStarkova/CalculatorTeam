@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.view.View
+import android.view.View.GONE
 import android.view.View.INVISIBLE
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -91,6 +92,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun showDialogMenu(v: View) {
         menu.setContentView(R.layout.menu_calculators)
+        val neomorph: FrameLayout = menu.findViewById(R.id.neomorph)
+        neomorph.visibility = GONE
         val oleg: FrameLayout = menu.findViewById(R.id.oleg)
         val rita: FrameLayout = menu.findViewById(R.id.rita)
         val petr: FrameLayout = menu.findViewById(R.id.petr)
