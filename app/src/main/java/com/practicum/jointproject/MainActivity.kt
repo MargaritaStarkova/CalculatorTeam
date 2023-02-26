@@ -1,6 +1,8 @@
 package com.practicum.jointproject
 
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.view.View
@@ -85,13 +87,15 @@ class MainActivity : AppCompatActivity() {
                 list.size == 1 && list[0] == "1" -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }
-                else -> clearing() //обработка неправильного ввода
+                else -> clearing() // Handiling a wrong input
             }
         }
     }
 
     private fun showDialogMenu(v: View) {
         menu.setContentView(R.layout.menu_calculators)
+        // Set the background of the dialog's root view to transparent
+        menu.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val neomorph: FrameLayout = menu.findViewById(R.id.neomorph)
         neomorph.visibility = GONE
         val oleg: FrameLayout = menu.findViewById(R.id.oleg)

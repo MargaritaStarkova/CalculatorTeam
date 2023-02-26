@@ -10,7 +10,7 @@
         android:id="@+id/neomorph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="16dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -28,7 +28,7 @@
         android:id="@+id/oleg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="16dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -46,7 +46,7 @@
         android:id="@+id/rita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="16dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
@@ -64,7 +64,7 @@
         android:id="@+id/petr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="16dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="80dp"
