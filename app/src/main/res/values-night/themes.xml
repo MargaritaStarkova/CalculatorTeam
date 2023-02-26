@@ -8,8 +8,8 @@
         <item name="neomorph_frame">@drawable/neomorph_night_image</item>
         <item name="neomorph_background">@color/dark_gray</item>
         <item name="neomorph_background_text">@drawable/custom_label</item>
-        <item name="neomorph_color_text">@color/appColor</item>
         <item name="neomorph_btn">@drawable/neomorph_night_btn</item>
+        <item name="neomorph_color_text">@color/appColor</item>
     </style>
 
 </resources>

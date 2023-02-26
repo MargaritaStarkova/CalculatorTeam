@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="17dp"
+    android:viewportWidth="32"
+    android:viewportHeight="17">
+  <path
+      android:pathData="M0,8.5L32,8.5"
+      android:strokeWidth="2"
+      android:strokeColor="?attr/neomorph_color_text"/>
+  <path
+      android:pathData="M0,16L32,16"
+      android:strokeWidth="2"
+      android:strokeColor="?attr/neomorph_color_text"/>
+  <path
+      android:pathData="M0,1L32,1"
+      android:strokeWidth="2"
+      android:strokeColor="?attr/neomorph_color_text"/>
+</vector>

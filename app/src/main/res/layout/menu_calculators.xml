@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/neomorph_frame">
+
+    <FrameLayout
+        android:id="@+id/neomorph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:background="@drawable/custom_button"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="?attr/neomorph_color_text"
+            android:text="@string/neomorphism"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/oleg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:background="@drawable/custom_button"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="?attr/neomorph_color_text"
+            android:text="Oleg's calculator"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:background="@drawable/custom_button"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="?attr/neomorph_color_text"
+            android:text="Rita's calculator"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/petr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:background="@drawable/custom_button"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="?attr/neomorph_color_text"
+            android:text="Petr's calculator"/>
+    </FrameLayout>
+</LinearLayout>

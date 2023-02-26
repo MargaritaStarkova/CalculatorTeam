@@ -277,6 +277,7 @@
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/backspace"
             style="@style/btn_neomorphism"
+            android:contentDescription="@string/backspace"
             android:src="@drawable/ic_baseline_backspace_24" />
     </FrameLayout>
 
@@ -315,6 +316,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/menu"
+            android:layout_width="50dp"
+            android:layout_height="26dp"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/menu"
+            android:background="?attr/neomorph_frame"
+            android:src="@drawable/point_menu"
+            android:visibility="visible"/>
     </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
