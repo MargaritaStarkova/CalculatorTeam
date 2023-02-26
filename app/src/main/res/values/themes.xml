@@ -11,5 +11,8 @@
         <item name="neomorph_background_text">@drawable/custom_label</item>
         <item name="neomorph_color_text">@color/black</item>
     </style>
-
+    <style name="Theme.ComposeBlackWhiteActivity" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/purple_700</item>
+    </style>
 </resources>
+
