@@ -196,6 +196,7 @@
             android:text="@string/percent" />
     </FrameLayout>
 
+
     <FrameLayout
         style="@style/frame_neomorphism"
         app:layout_constraintBottom_toBottomOf="@id/horizontal36"
